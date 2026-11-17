@@ -3,6 +3,7 @@ import cors from 'cors';
 import { saldoRoutes } from './routes/saldo.routes';
 import { ErrorApp } from './utils';
 import { productRoutes } from './routes/product.routes';
+import { autorizadoPorMi } from './middleware/autorized.middleware';
 
 const app = express();
 const PORT = 3000;
@@ -11,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/saldo', saldoRoutes);
-app.use("/api/catalogo", productRoutes);
+app.use("/api/catalogo", autorizadoPorMi, productRoutes);
 app.use((error: Error, _req: Request, res: Response, _next: NextFunction) => {
   if (error instanceof ErrorApp) {
     res.status(error.status).json({ mensaje: error.message });
