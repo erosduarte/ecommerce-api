@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use('/api/saldo', saldoRoutes);
 app.use("/api/catalogo", autorizadoPorMi, productRoutes);
-app.use("/api/contenido", contenidoRoutes);
+app.use("/api/contenido", autorizadoPorMi, contenidoRoutes);
 
 app.use((error: Error, _req: Request, res: Response, _next: NextFunction) => {
   if (error instanceof ErrorApp) {
