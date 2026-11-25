@@ -1,4 +1,4 @@
-import { Product } from '../src/product.model';
+import { Product } from './product.model';
 
 export const Productos: Product[] = [
   {
@@ -168,5 +168,19 @@ export const Productos: Product[] = [
     oferta: true,
     color: ['Negro', 'Carey'],
     size: ['Única']
+  },
+  {
+    id: 13,
+    name: 'Flared jeans tiro medio',
+    description: 'Pantalón vaquero de corte acampanado con efecto lavado vintage y cinco bolsillos.',
+    price: 35.99,
+    images: ['https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800'],
+    category: 'Ropa',
+    subcategory: 'Jeans',
+    active: true,
+    stock: 16,
+    oferta: false,
+    color: ['Azul', 'Negro'],
+    size: ['34', '36', '38', '40', '42']
   }
 ];
